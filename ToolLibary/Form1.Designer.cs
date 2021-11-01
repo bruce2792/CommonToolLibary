@@ -83,6 +83,7 @@ namespace ToolLibary
             this.Controls.Add(this.cmbMinites);
             this.Controls.Add(this.btnUpadateGitHubHosts);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "工具库";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
