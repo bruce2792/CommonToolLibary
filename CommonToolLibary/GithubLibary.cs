@@ -20,9 +20,9 @@ namespace CommonToolLibary
             if (string.IsNullOrWhiteSpace(hostsContent))
                 return;
 
-            hostsContent = "\r\n# 开始更新Github Hosts\r\n" + hostsContent;
+            hostsContent = "# 开始更新Github Hosts\r\n" + hostsContent;
             hostsContent = hostsContent + $"\r\n# 更新时间：{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff")}";
-            hostsContent = hostsContent + "\r\n# 更新Github Hosts结束\r\n";
+            hostsContent = hostsContent + "\r\n# 更新Github Hosts结束";
             // Console.WriteLine(hostsContent);
 
 
@@ -32,14 +32,12 @@ namespace CommonToolLibary
 
             var flagStartPosition = localHosts.IndexOf("# 开始更新Github Hosts");
             var flagEndPosition = localHosts.IndexOf("# 更新Github Hosts结束");
-            Console.WriteLine($"flagStartPosition:{flagStartPosition}");
-            Console.WriteLine($"flagEndPosition:{flagEndPosition}");
 
 
 
             if (flagStartPosition == -1)
             {
-                localHosts += hostsContent;
+                localHosts += "\r\n" + hostsContent + "\r\n";
                 SetHosts(localHosts);
 
             }
