@@ -47,8 +47,7 @@ namespace CommonToolLibary
             {
                 var oldContent = localHosts.Substring(flagStartPosition, flagEndPosition + "# 更新Github Hosts结束".Length - flagStartPosition);
                 //Console.WriteLine(oldContent);
-                var newHostsContent = localHosts.Replace(oldContent, "");
-                newHostsContent += hostsContent;
+                var newHostsContent = localHosts.Replace(oldContent, hostsContent);
                 SetHosts(newHostsContent);
 
             }
