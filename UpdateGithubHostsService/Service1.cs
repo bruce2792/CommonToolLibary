@@ -24,38 +24,46 @@ namespace UpdateGithubHostsService
 
         protected override void OnStart(string[] args)
         {
-            GithubLibary.UpdateGithubHosts();
+            logger.Info($"服务开始启动");
+            UpdateGitHubHosts();
         }
 
         protected override void OnStop()
         {
+            logger.Info($"服务停止");
         }
 
 
         private void UpdateGitHubHosts()
         {
-
-            GithubLibary.UpdateGithubHosts();
-            logger.Info($"更新GitHub Hosts时间：{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff")}");
-
-            var minites = 5;
-            DateTime dt1 = DateTime.Now;
-            Task.Factory.StartNew(() =>
+            try
             {
-                while (true)
+                GithubLibary.UpdateGithubHosts();
+                logger.Info($"更新GitHub Hosts时间：{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff")}");
+
+                var minites = 5;
+                DateTime dt1 = DateTime.Now;
+                Task.Factory.StartNew(() =>
                 {
-
-                    DateTime dt2 = DateTime.Now;
-                    var ts = Common.DateDiff(dt2, dt1);
-                    if (ts.Minutes > minites)
+                    while (true)
                     {
-                        GithubLibary.UpdateGithubHosts();
-                        logger.Info($"更新GitHub Hosts时间：{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff")}");
-                        dt1 = DateTime.Now;
-                    }
 
-                }
-            });
+                        DateTime dt2 = DateTime.Now;
+                        var ts = Common.DateDiff(dt2, dt1);
+                        if (ts.Minutes > minites)
+                        {
+                            GithubLibary.UpdateGithubHosts();
+                            logger.Info($"更新GitHub Hosts时间：{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff")}");
+                            dt1 = DateTime.Now;
+                        }
+
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+            }
         }
     }
 }
