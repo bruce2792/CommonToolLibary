@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolLibary", "ToolLibary\To
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateGithubHostsService", "UpdateGithubHostsService\UpdateGithubHostsService.csproj", "{670BC7BF-DC4A-41DA-BD87-440A88FE3F59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveExtraSpaces", "RemoveExtraSpaces\RemoveExtraSpaces.csproj", "{B75D082D-41FB-49A5-891B-8E53403B6AF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{670BC7BF-DC4A-41DA-BD87-440A88FE3F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{670BC7BF-DC4A-41DA-BD87-440A88FE3F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{670BC7BF-DC4A-41DA-BD87-440A88FE3F59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B75D082D-41FB-49A5-891B-8E53403B6AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B75D082D-41FB-49A5-891B-8E53403B6AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B75D082D-41FB-49A5-891B-8E53403B6AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B75D082D-41FB-49A5-891B-8E53403B6AF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
